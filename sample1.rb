@@ -4,7 +4,7 @@
 vitality = 10	# 体力
 mental = 10	# 機嫌度
 cmd = ""	# 世話コマンド
-food, clean, out, sleep = 0, 0, 0, 0	# 世話フラグかつサボり日数(略してセワサボ)
+food, clean, out, slept = 0, 0, 0, 0	# 世話フラグかつサボり日数(略してセワサボ)
 
 # 7日間預かり、8日目に返す
 puts "ナマケモノを預かることになりました。"
@@ -14,7 +14,7 @@ puts "ナマケモノを預かることになりました。"
 	food += 1
 	clean += 1
 	out += 1
-	sleep += 1
+	slept += 1
 	4.times { | action |
 		print "どの世話をしますか？ (f.食事/c.掃除/o.散歩/s.睡眠) =>"
 		cmd = gets.chomp	# コマンドは数字でなく文字にしました
@@ -39,7 +39,7 @@ puts "ナマケモノを預かることになりました。"
 				puts "寝かしつけました。"
 				vitality -=2
 				mental +=2
-				sleep = 0
+				slept = 0
 			else
 				puts "コマンドが違います"
 				redo	# ミス入力はループやり直し
@@ -67,8 +67,8 @@ puts "ナマケモノを預かることになりました。"
 		mental -=1 * clean
 		puts "散歩に連れてってあげましょう"
 	end
-	if sleep > 0
-		mental -=3 * sleep
+	if slept > 0
+		mental -=3 * slept
 		puts "眠たそうです"
 	end
 	# 世話失敗したら強制終了
