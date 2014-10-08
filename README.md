@@ -1,5 +1,6 @@
 ナマケモノ育成ゲーム
 ==========
+[![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/repserc/namakemono?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 突然、ナマケモノを7日間預かることになりました。
 
